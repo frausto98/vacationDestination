@@ -1,0 +1,18 @@
+.search-bar{
+   flex-wrap: wrap;
+    width:100%;
+    min-height:50px;
+    padding: 20px;
+    background-color:rgb(119, 118, 118);
+    padding-left: 1500px;
+}
+.navlinks{
+    background-color:rgb(119, 118, 118);
+    flex-wrap: wrap;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size:larger ;
+}
+.content-flex-space{
+    background-color: rgb(119, 118, 118);
+}
