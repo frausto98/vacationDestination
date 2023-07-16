@@ -1,9 +1,7 @@
 
 
 var searchButton = $('#searchButton');
-
 var citySearch = $('#searchCity');
-
 var checkIn;
 var checkOut;
 var city;
