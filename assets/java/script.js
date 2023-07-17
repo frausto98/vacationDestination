@@ -35,7 +35,8 @@ async function findCity(city) {
 
 
 
-async function findHotels(geoId){
+
+async function findHotels(geoId, city){
     window.location.href="./html/cityStay.html";   
     const settings = {
         async: true,
