@@ -16,3 +16,47 @@
 .content-flex-space{
     background-color: rgb(119, 118, 118);
 }
+.navlinks {
+    display: flex;
+  }
+  
+  #menulist {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  #menulist li {
+    margin-right: 10px; 
+  }
+  
+  #menulist li:last-child {
+    margin-right: 0; 
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #search-input {
+    padding: 10px;
+    border: none;
+    background-color: lightgrey;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  #search-input::placeholder {
+    color: rgb(27, 27, 27);
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: darkgrey;
+    color: rgb(68, 68, 68);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
