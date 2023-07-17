@@ -27,7 +27,7 @@ async function findCity(city) {
         var geoId = geoString.split(';')[1]
         console.log(response);
         console.log(geoId);
-        findHotels(geoId);
+        findHotels(geoId, city);
 
     });
 }
@@ -35,7 +35,8 @@ async function findCity(city) {
 
 
 
-async function findHotels(geoId){
+
+async function findHotels(geoId, city){
     window.location.href="./html/cityStay.html";   
     const settings = {
         async: true,
@@ -49,8 +50,14 @@ async function findHotels(geoId){
     };
     
     $.ajax(settings).done(function (response) {
+        // window.location.href = "./html/citystay.html";
+        localStorage.setItem(response);
+        localStorage.setItem('city', city);
         console.log(response);
+        console.log(localStorage);
     });
+
+    console.log(localStorage);   
 
 }
 searchButton.on('click', function(event){
