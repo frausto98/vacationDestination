@@ -1,62 +1,92 @@
-.search-bar{
-   flex-wrap: wrap;
-    width:100%;
-    min-height:50px;
+.search-bar {
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 50px;
     padding: 20px;
-    background-color:rgb(119, 118, 118);
-    padding-left: 1500px;
+    background-color: rgb(177, 177, 177);
+    /* padding-left: 1500px; */
 }
-.navlinks{
-    background-color:rgb(119, 118, 118);
+#search-input{
+   width: 500px;
+
+}
+.navlinks {
+    background-color: rgb(119, 118, 118);
     flex-wrap: wrap;
     padding-left: 15px;
     font-weight: bold;
-    font-size:larger ;
+    font-size: larger;
 }
-.content-flex-space{
-    background-color: rgb(119, 118, 118);
+
+.box p{
+    font-size: large;
+    font-weight: 120%;
+    line-height: 2.25;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+ 
+.navlinks h1 {
+    background-color: rgb(167, 166, 166);
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+
+.content-flex-space {
+    background-color: rgb(168, 168, 168);
+}
+
 .navlinks {
     display: flex;
-  }
-  
-  #menulist {
+    justify-content: space-between;
+    background-color: rgb(152, 177, 201);
+    padding: 10px;
+}
+
+#menulist {
     list-style: none;
     display: flex;
-    padding: 0;
-  }
-  
-  #menulist li {
-    margin-right: 10px; 
-  }
-  
-  #menulist li:last-child {
-    margin-right: 0; 
-  }
-  .search-bar {
+
+}
+
+#menulist li {
+    margin-right: 10px;
+}
+
+#menulist li:last-child {
+    margin-right: 0;
+}
+
+.search-bar {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  #search-input {
+}
+
+#search-input {
     padding: 10px;
     border: none;
-    background-color: lightgrey;
+    background-color: rgb(152, 177, 201);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(12, 12, 12, 0.5);
-  }
-  
-  #search-input::placeholder {
+}
+
+#search-input::placeholder {
     color: rgb(27, 27, 27);
-  }
-  
-  button {
+}
+
+button {
     padding: 10px 20px;
     border: none;
-    background-color: darkgrey;
-    color: rgb(68, 68, 68);
+    background-color: rgb(139, 139, 139);
+    color: rgb(0, 0, 0);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-  }
+    font-weight: bold;
+}
