@@ -72,6 +72,7 @@ async function findHotels(geoId, city){
 }
 searchButton.on('click', function(event){
     event.preventDefault();
+    // window.location.href="./html/cityStay.html";
     console.log('in click event')
     var city = citySearch.val();
     console.log('city', city);
