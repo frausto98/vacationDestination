@@ -10,3 +10,26 @@ var numChild = $('childNum');
 var priceMin = $('minPrice');
 var priceMax = $('maxPrice');
 var rating = $('rating')
+
+console.log(geoId);
+console.log(storedCity);
+
+$(function() {
+    $("#checkInDate").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
+    $("#checkOutDate").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
+
+    searchButton.on('click', function(event) {
+        event.preventDefault();
+
+        var checkIn = $("#checkInDate").datepicker("getDate");
+        var checkOut = $("#checkOutDate").datepicker("getDate");
+        console.log("Check-in Date:", checkIn);
+        console.log("Check-out Date:", checkOut);
+
+        findHotels(checkIn, checkOut);
+    });
+});
