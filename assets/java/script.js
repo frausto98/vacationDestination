@@ -9,9 +9,16 @@ var city;
 
 
 
+var searchButton = $('#searchButton');
+var citySearch = $('#searchCity');
+var checkIn;
+var checkOut;
+var city;
+
+
+
+
 async function findCity(city) {
-  
- const settings = {
   
  const settings = {
         async: true,
@@ -30,12 +37,8 @@ async function findCity(city) {
         console.log(response);
         console.log(geoId);
         findHotels(geoId, city);
-        findHotels(geoId, city);
 
     });
-}
-async function hotelRooms(){
-
 }
 
 
