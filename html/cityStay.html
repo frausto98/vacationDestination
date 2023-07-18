@@ -6,59 +6,70 @@
     <title>City and Hotel Information</title>
     <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href = "../assets/css/cityStay.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
 </head>
-
-<p>hey</p>
 
 <body>
     <header>
-        <div class="content-flex-space">
-            <div class="logo">
-                <img src="img/logo.png">
+        <section class="hero has-background-grey-dark ">
+            <div class="hero-body ">
+              <p class="title has-text-white">
+                Vacation Destination
+              </p>
+              <!-- <p class="subtitle">
+                
+              </p> -->
             </div>
-
-
-            <div class="navlinks">
-                <ul id="menulist">
-                    <li><a href="Home">Home</a></li>
-                    <li><a href="Contact">Contact</a></li>
-                    <li><a href="About">About</a></li>
-                </ul>
-            </div>
-
-        </div>
-
+          </section>
     </header>
 
-    <main>
-    <div>
-        <form>
-    <label>Check In</label>
-    <input id="checkInDate"type="text" name="from">
-    <label >Check Out</label>
-    <input id="checkOutDate" type="text" name="to">
-    <br>
-    <label>Number of Rooms</label>
-    <input id="roomNum" type="text" name="to">
-    <br>
-    <label>Number of Adults</label>
-    <input id="adultsNum" type="text" name="to">
-    <br>
-    <label>Minimum Price</label>
-    <input id="minPrice" type="text" name="to">
-    <br>
-    <label for="to">Maximum Price</label>
-    <input id="maxPrice" type="text" name="to">
-    <br>
-    <label>Rating</label>
-    <input id="rating" type="text" name="to">
-    <br>
+    <div class="block"></div>
 
-<button id="searchBtn">Search</button>
-</form>
-</div>
+    <main>
+        <section>
+        <div id="fillOutContatiner" class="tile is-ancestor is-vertical is-12">
+
+                <div id="checkInOutArea" class="tile is-parent box content has-background-grey-light is-4 is-align-self-center">
+                    <div class="tile is-child">
+                        <label>Check In</label>
+                        <input id="checkInDate"type="text" name="from" class="input is-danger">
+                    </div>
+                    <div class="tile is-child">
+                        <label >Check Out</label>
+                        <input id="checkOutDate" type="text" name="to" class="input is-danger">
+                    </div>
+                </div>
+                <div id="extraOptions" class="tile is-parent box content has-background-grey-light is-7 is-align-self-center">
+                    <div class="tile is-child">
+                        <label>Number of Rooms</label>
+                        <input id="roomNum" type="text" name="to" class="input is-danger">
+                    </div>
+                    <div class="tile is-child">
+                        <label>Number of Adults</label>
+                        <input id="adultsNum" type="text" name="to" class="input is-danger">
+                    </div>
+                    <div class="tile is-child">
+                        <label>Minimum Price</label>
+                        <input id="minPrice" type="text" name="to" class="input is-danger">
+                    </div>
+                    <div class="tile is-child">
+                        <label for="to">Maximum Price</label>
+                        <input id="maxPrice" type="text" name="to" class="input is-danger">
+                    </div>
+                    <div class="tile is-child">
+                        <label>Rating</label>
+                        <input id="rating" type="text" name="to" class="input is-danger">
+                    </div>
+
+                
+                </div>
+                <div class="tile is-align-self-center">
+                    <button id="searchBtn" class="button is-danger is-light is-medium">Search</button>
+                </div>
+        </div>
+        </section>
         
         <div id="mainContainer" class="is-hidden">
             <div id="columns" class="tile is-ancestor is-12">
