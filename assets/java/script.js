@@ -5,7 +5,8 @@ var citySearch = $('#searchCity');
 var checkIn;
 var checkOut;
 var city;
-
+var apiKey = '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0';
+var apiKey1 = '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302';
 
 
 
