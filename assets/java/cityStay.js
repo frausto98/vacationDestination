@@ -61,7 +61,39 @@ async function findHotels(checkIn, checkOut) {
 
     $.ajax(settings).done(function(response) {
         console.log(response);
+        var dataArray = response.data.data;
+        console.log(dataArray[0].title);
+
+
+        for (var i = 0; i < 4; i++) {
+            var hotelIndex = i + 1;
+            var hotelName = dataArray[i].title;
+            var hotelInfo = dataArray[i].priceDetails;
+            var hotelPrice = dataArray[i].priceForDisplay;
+            if (hotelInfo = 'null') {
+                hotelInfo = 'No Hotel Inforamtion Available';
+            }
+    
+            // Update the hotel name, info, and price elements in the HTML
+            $('#hotelName' + hotelIndex).append(hotelName);
+            $('#hotelInfo' + hotelIndex).append('Hotel info: ' + hotelInfo);
+            $('#hotelPrice' + hotelIndex).append(hotelPrice);
+        }
     });
+
+    var sizes = {
+        __typename: 'AppPresentation_PhotoItemSizeDynamic',
+        maxHeight: 958,
+        maxWidth: 2000,
+        urlTemplate: 'https://dynamic-media-cdn.tripadvisor.com/media/ph…from-our-park-suites.jpg?w={width} &h={height}&s=1'
+      };
+      
+      var url = sizes.urlTemplate;
+      console.log(url);
+        // console.log()
+        // console.log()
+
+    
 }
 
 // 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=186338&checkIn=%3CREQUIRED%3E&checkOut=2023-07-19&pageNumber=1&adults=2&rooms=2&currencyCode=USD&rating=2&priceMin=100&priceMax=200'
