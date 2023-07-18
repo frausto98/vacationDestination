@@ -34,12 +34,16 @@ async function findCity(city) {
 
     });
 }
+async function hotelRooms(){
+
+}
 
 
 
 
 
 async function findHotels(geoId, city){
+    window.location.href="./html/cityStay.html";   
     window.location.href="./html/cityStay.html";   
     const settings = {
         async: true,
@@ -70,8 +74,6 @@ async function findHotels(geoId, city){
 }
 searchButton.on('click', function(event){
     event.preventDefault();
-    // window.location.href="./html/cityStay.html";
-    // window.location.href="./html/cityStay.html";
     console.log('in click event')
     var city = citySearch.val();
     console.log('city', city);
