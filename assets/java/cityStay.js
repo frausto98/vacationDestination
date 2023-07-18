@@ -33,3 +33,26 @@ $(function() {
         findHotels(checkIn, checkOut);
     });
 });
+
+async function findHotels(checkIn, checkOut) {
+    console.log(geoId);
+
+    var formattedCheckIn = $.datepicker.formatDate("yy-mm-dd", checkIn);
+    var formattedCheckOut = $.datepicker.formatDate("yy-mm-dd", checkOut);
+    console.log(formattedCheckIn);
+
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1&currencyCode=USD',
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0',
+            'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
+        }
+    };
+
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+    });
+}
