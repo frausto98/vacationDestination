@@ -11,6 +11,13 @@ var priceMin = $('minPrice');
 var priceMax = $('maxPrice');
 var rating = $('rating')
 
+var numRoomUrl = '&rooms=' + $('roomNum');
+var numAdultsUrl = '&adults=' + $('adultsNum');
+// var numChildUrl = '&rooms=' + $('childNum');
+var priceMinUrl = '&priceMin=' + $('minPrice');
+var priceMaxUrl = '&priceMax=' + $('maxPrice');
+var ratingUrl = '&rating=' + $('rating'); 
+
 console.log(geoId);
 console.log(storedCity);
 
@@ -44,7 +51,7 @@ async function findHotels(checkIn, checkOut) {
     const settings = {
         async: true,
         crossDomain: true,
-        url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1&currencyCode=USD',
+        url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0',
@@ -56,3 +63,8 @@ async function findHotels(checkIn, checkOut) {
         console.log(response);
     });
 }
+
+// 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=186338&checkIn=%3CREQUIRED%3E&checkOut=2023-07-19&pageNumber=1&adults=2&rooms=2&currencyCode=USD&rating=2&priceMin=100&priceMax=200'
+
+
+// url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
