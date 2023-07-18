@@ -38,6 +38,7 @@ $(function() {
         console.log("Check-out Date:", checkOut);
 
         findHotels(checkIn, checkOut);
+        
     });
 });
 
@@ -71,7 +72,7 @@ async function findHotels(checkIn, checkOut) {
             var hotelInfo = dataArray[i].priceDetails;
             var hotelPrice = dataArray[i].priceForDisplay;
             if (hotelInfo = 'null') {
-                hotelInfo = 'No Hotel Inforamtion Available';
+                hotelInfo = 'No Hotel Inforamtion Available'
             }
     
             // Update the hotel name, info, and price elements in the HTML
@@ -79,17 +80,8 @@ async function findHotels(checkIn, checkOut) {
             $('#hotelInfo' + hotelIndex).append('Hotel info: ' + hotelInfo);
             $('#hotelPrice' + hotelIndex).append(hotelPrice);
         }
+        $("#hotelColumn").removeClass("is-hidden");
     });
-
-    var sizes = {
-        __typename: 'AppPresentation_PhotoItemSizeDynamic',
-        maxHeight: 958,
-        maxWidth: 2000,
-        urlTemplate: 'https://dynamic-media-cdn.tripadvisor.com/media/ph…from-our-park-suites.jpg?w={width} &h={height}&s=1'
-      };
-      
-      var url = sizes.urlTemplate;
-      console.log(url);
         // console.log()
         // console.log()
 
@@ -100,3 +92,37 @@ async function findHotels(checkIn, checkOut) {
 
 
 // url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
+const apiKey = 'v_ZHZM7ccQIgp2uVQNcA09a5epEcctWEX4kxYQ3TwM8';
+
+// Number of random images to fetch
+const numImages = 5;
+
+// Container element to append the images
+const imageIds = ['image1', 'image2', 'image3','image4'];
+
+// Fetch random images from Unsplash API
+function fetchAndSetImageSource(imageId) {
+    // Fetch a random image from Unsplash API
+    fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + apiKey)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        // Get the image element by ID
+        var image = document.getElementById(imageId);
+  
+        // Set the source URL of the image
+        image.src = data.urls.regular;
+  
+        // Set other attributes or styles as desired
+        image.alt = data.alt_description;
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+      });
+  }
+  
+  // Loop through the image IDs and fetch/set image source URLs
+  imageIds.forEach(function(imageId) {
+    fetchAndSetImageSource(imageId);
+  });
