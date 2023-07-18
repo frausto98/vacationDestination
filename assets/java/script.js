@@ -69,3 +69,53 @@ searchButton.on('click', function(event){
     findCity(city);
 
 });
+
+
+// animejs
+
+window.onload = function() {
+    var duration = 2000;
+    var delta = 1000;
+  
+    var load = document.getElementById("load");
+    var container = document.getElementById("container");
+    var slides = document.querySelectorAll('.slide');
+  
+  
+    imagesLoaded(container, function() {
+     
+      container.style.opacity = 1;
+  
+      var totalDuration = duration * slides.length;
+      var animationDuration = totalDuration + (slides.length - 1) * delta;
+  
+      slides.forEach(function(slide, index) {
+        slide.style.zIndex = slides.length + index;
+  
+        var tm = anime.timeline({
+          loop: true,
+          duration: totalDuration,
+        });
+  
+    
+        tm.add({
+          targets: slide,
+          translateX: ['-100vw', '0'],
+          easing: 'linear',
+          duration: duration,
+          delay: index * duration,
+        }).add({
+          targets: slide,
+          translateX: ['0', '100vw'],
+          easing: 'linear',
+          duration: duration,
+          delay: (slides.length - index - 1) * duration + delta,
+        });
+  
+       
+        if (index === 0) {
+          slide.classList.add('active');
+        }
+      });
+    });
+  };

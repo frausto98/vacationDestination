@@ -6,8 +6,8 @@
     <title>City and Hotel Information</title>
     <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/css/jquery-ui.css">
-    <link src = "include CSS stylesheet here">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href = "../assets/css/cityStay.css">
 </head>
 
 <p>hey</p>
@@ -46,9 +46,6 @@
     <label>Number of Adults</label>
     <input id="adultsNum" type="text" name="to">
     <br>
-    <label>Number of Children</label>
-    <input id="childNum" type="text" name="to">
-    <br>
     <label>Minimum Price</label>
     <input id="minPrice" type="text" name="to">
     <br>
@@ -63,14 +60,14 @@
 </form>
 </div>
         
-        <div id="mainContainer">
+        <div id="mainContainer" class="is-hidden">
             <div id="columns" class="tile is-ancestor is-12">
 
                 <div id="weatherColumn" class="tile is-vertical is-4">
 
                 <div id="weatherColumn" class="tile is-vertical is-4">
 
-                <divclass="tile is-vertical is-4">
+                <div class="tile is-vertical is-4">
 
                     <div class="tile is-parent">
                         <div id="mainCityInfo" class="tile is-child box content has-background-grey">
@@ -96,37 +93,54 @@
                         </div>
                     
                 </div>
-
-                <div id="hotelColumn" class="tile is-vertical is-8">
-                    <div class="tile is-parent">
-                        <div id="hotelInfo1" class="tile is-child box content has-background-grey">
-                            <h3 id="hotelName1">hi</h3>
-                            <p id="hotelInfo1">hi</p>
-                            <p id="hotelPrice1">hi</p>
-                        </div>
-                        <div id="hotelInfo2" class="tile is-child box content has-background-grey">
-                            <h3 id="hotelName2">hi</h3>
-                            <p id="hotelInfo2">hi</p>
-                            <p id="hotelPrice2">hi</p>
-                        </div>
-                    </div>
-                    <div class="tile is-parent">
-                        <div id="hotelInfo3" class="tile is-child box content has-background-grey">
-                            <h3 id="hotelName3">hi</h3>
-                            <p id="hotelInfo3">hi</p>
-                            <p id="hotelPrice3">hi</p>
-                        </div>
-                        <div id="hotelInfo4" class="tile is-child box content has-background-grey">
-                            <h3 id="hotelName4">hi</h3>
-                            <p id="hotelInfo4">hi</p>
-                            <p id="hotelPrice4">hi</p>
-                        </div>
-                    </div>
-                </div>
-
-                
             </div>
         </div>
+     </div>  
+</div>
+                <div id="hotelColumn" class=" is-hidden is-centered container">
+                    <div class="columns is-variable is-8">
+                      <div class="column">
+                        <div class="box content has-background-grey">
+                            <img id="image1">
+                          <h3 id="hotelName1">Featured Hotel: </h3>
+                          <p id="hotelInfo1"></p>
+                          <p id="hotelPrice1">Hotel Price:</p>
+                          <button class="button is-info">Reserve Now</button>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div  class="box content has-background-grey">
+                            <img id="image2">
+                          <h3 id="hotelName2">Hotel: </h3>
+                          <p id="hotelInfo2"></p>
+                          <p id="hotelPrice2">Hotel Price:</p>
+                          <button class="button is-info">Reserve Now</button>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div  class="box content has-background-grey">
+                            <img id="image3">
+                          <h3 id="hotelName3">Hotel: </h3>
+                          <p id="hotelInfo3"></p>
+                          <p id="hotelPrice3">Hotel Price:</p>
+                          <button class="button is-info">Reserve Now</button>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <div  class="box content has-background-grey">
+                            <img id="image4">
+                          <h3 id="hotelName4">Hotel: </h3>
+                          <p id="hotelInfo4"></p>
+                          <p id="hotelPrice4">Hotel Price:</p>
+                          <button class="button is-info">Reserve Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                
+            
 
 
 
