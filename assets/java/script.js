@@ -69,3 +69,24 @@ searchButton.on('click', function(event){
     findCity(city);
 
 });
+
+
+// animejs
+
+var duration = 2000;
+var delta = 1000;
+
+var load = document.getElementById("load");
+var container = document.getElementById("container");
+var slides = document.querySelectorAll('.slide');
+
+
+imagesLoaded(container, function() {
+ 
+  container.style.opacity = 1;
+
+  var totalDuration = duration * slides.length;
+  var animationDuration = totalDuration + (slides.length - 1) * delta;
+
+  slides.forEach(function(slide, index) {
+    slide.style.zIndex = slides.length + index;
