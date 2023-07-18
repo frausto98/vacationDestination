@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City and Hotel Information</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.css">
     <link src = "include CSS stylesheet here">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
@@ -29,7 +31,38 @@
         </div>
 
     </header>
+
     <main>
+    <div>
+        <form>
+    <label>Check In</label>
+    <input id="checkInDate"type="text" id="from" name="from">
+    <label >Check Out</label>
+    <input id="checkOutDate" type="text" name="to">
+    <br>
+    <label>Number of Rooms</label>
+    <input id="roomNum" type="text" name="to">
+    <br>
+    <label>Number of Adults</label>
+    <input id="adultsNum" type="text" name="to">
+    <br>
+    <label>Number of Children</label>
+    <input id="childNum" type="text" name="to">
+    <br>
+    <label>Minimum Price</label>
+    <input id="minPrice" type="text" name="to">
+    <br>
+    <label for="to">Maximum Price</label>
+    <input id="maxPrice" type="text" name="to">
+    <br>
+    <label>Rating</label>
+    <input id="rating" type="text" name="to">
+    <br>
+
+<button id="searchBtn">Search</button>
+</form>
+</div>
+        
         <div id="mainContainer">
             <div id="columns" class="tile is-ancestor is-12">
 
@@ -104,7 +137,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script src="../assets/java/script.js"></script>
+    <script src="../assets/java/jquery-ui.js"></script>
+    <script src="../assets/java/cityStay.js"></script>
 </body>
 
 </html>
