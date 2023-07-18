@@ -47,7 +47,6 @@ async function findCity(city) {
 
 async function findHotels(geoId, city){
     window.location.href="./html/cityStay.html";   
-    window.location.href="./html/cityStay.html";   
     const settings = {
         async: true,
         crossDomain: true,
@@ -63,15 +62,11 @@ async function findHotels(geoId, city){
         // window.location.href = "./html/citystay.html";
         localStorage.setItem(response);
         localStorage.setItem('city', city);
-        // window.location.href = "./html/citystay.html";
-        localStorage.setItem(response);
-        localStorage.setItem('city', city);
         console.log(response);
         console.log(localStorage);
     });
 
     console.log(localStorage);   
-
     console.log(localStorage);   
 
 }
