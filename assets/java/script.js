@@ -10,8 +10,8 @@ var city;
 
 
 async function findCity(city) {
-    
-    const settings = {
+  
+ const settings = {
         async: true,
         crossDomain: true,
         url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation?query=' + city,
@@ -27,12 +27,17 @@ async function findCity(city) {
         var geoId = geoString.split(';')[1]
         console.log(response);
         console.log(geoId);
-        findHotels(geoId);
+        findHotels(geoId, city);
 
     });
 }
 
-async function findHotels(geoId){
+
+
+
+
+async function findHotels(geoId, city){
+    window.location.href="./html/cityStay.html";   
     const settings = {
         async: true,
         crossDomain: true,
@@ -45,12 +50,19 @@ async function findHotels(geoId){
     };
     
     $.ajax(settings).done(function (response) {
+        // window.location.href = "./html/citystay.html";
+        localStorage.setItem(response);
+        localStorage.setItem('city', city);
         console.log(response);
+        console.log(localStorage);
     });
+
+    console.log(localStorage);   
 
 }
 searchButton.on('click', function(event){
     event.preventDefault();
+    // window.location.href="./html/cityStay.html";
     console.log('in click event')
     var city = citySearch.val();
     console.log('city', city);
