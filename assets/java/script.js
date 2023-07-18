@@ -9,15 +9,6 @@ var city;
 
 
 
-var searchButton = $('#searchButton');
-var citySearch = $('#searchCity');
-var checkIn;
-var checkOut;
-var city;
-
-
-
-
 async function findCity(city) {
   
  const settings = {
@@ -66,7 +57,6 @@ async function findHotels(geoId, city){
         console.log(localStorage);
     });
 
-    console.log(localStorage);   
     console.log(localStorage);   
 
 }
