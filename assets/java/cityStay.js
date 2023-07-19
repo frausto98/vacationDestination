@@ -113,10 +113,7 @@ async function findHotels(checkIn, checkOut) {
 
 
 
-// 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=186338&checkIn=%3CREQUIRED%3E&checkOut=2023-07-19&pageNumber=1&adults=2&rooms=2&currencyCode=USD&rating=2&priceMin=100&priceMax=200'
 
-
-// url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
 var unsplashApiKey = 'v_ZHZM7ccQIgp2uVQNcA09a5epEcctWEX4kxYQ3TwM8';
 var unsplashApiKey1 = '5lH3PxzCuhd_HBTDBZYhWGJbPjXw2Qido0wXCLMS2Vs';
 
@@ -160,6 +157,6 @@ function fetchAndSetImageSource(imageId) {
     hotelParams.hotelName = hotelName;
     hotelParams.imageSource = imageHotel;
     localStorage.setItem('confirmationPage', JSON.stringify(hotelParams));
-    window.location.href = "accept.html"
+    window.location.href = ".confirm.html"
 });
 
