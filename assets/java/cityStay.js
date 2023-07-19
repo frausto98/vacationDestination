@@ -2,24 +2,22 @@ console.log(localStorage);
 var storedData = localStorage.getItem('data');
 var dataArray = JSON.parse(storedData);
 var storedCity = localStorage.getItem('city');
-var geoId = localStorage.getItem('gedId');
+var geoId = localStorage.getItem('geoId');
 var searchButton = $('#searchBtn');
-var numRoom = $('roomNum')
-var numAdults = $('adultsNum');
-var numChild = $('childNum');
-var priceMin = $('minPrice');
-var priceMax = $('maxPrice');
-var rating = $('rating')
+var numRoom = $('#roomNum');
+var numAdults = $('#adultsNum');
+var numChild = $('#childNum');
+var priceMin = $('#minPrice');
+var priceMax = $('#maxPrice');
+var rating = $('#rating');
 
-var numRoomUrl = '&rooms=' + $('roomNum');
-var numAdultsUrl = '&adults=' + $('adultsNum');
-// var numChildUrl = '&rooms=' + $('childNum');
-var priceMinUrl = '&priceMin=' + $('minPrice');
-var priceMaxUrl = '&priceMax=' + $('maxPrice');
-var ratingUrl = '&rating=' + $('rating'); 
+
+// var reserveBtn = $('.reserve-btn');
 
 var apiKey = '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0'
 var apiKey1 = '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302'
+var formattedCheckIn;
+var formattedCheckOut;
 
 console.log(geoId);
 console.log(storedCity);
@@ -43,19 +41,33 @@ $(function() {
         findHotels(checkIn, checkOut);
         
     });
+
 });
+
 
 async function findHotels(checkIn, checkOut) {
     console.log(geoId);
-
-    var formattedCheckIn = $.datepicker.formatDate("yy-mm-dd", checkIn);
-    var formattedCheckOut = $.datepicker.formatDate("yy-mm-dd", checkOut);
+    var numRoomUrl = '&rooms=' + $('#roomNum').val();
+    var numAdultsUrl = '&adults=' + $('#adultsNum').val();
+    var priceMinUrl = '&priceMin=' + $('#minPrice').val();
+    var priceMaxUrl = '&priceMax=' + $('#maxPrice').val();
+    var ratingUrl = '&rating=' + $('#rating').val(); 
+    formattedCheckIn = $.datepicker.formatDate("yy-mm-dd", checkIn);
+    formattedCheckOut = $.datepicker.formatDate("yy-mm-dd", checkOut);
     console.log(formattedCheckIn);
+    var roomConfirm = {
+        formattedCheckIn: formattedCheckIn,
+        formattedCheckOut: formattedCheckOut,
+        rooms: $('#roomNum').val(),
+        numAdults: $('#adultsNum').val(),
+
+    }
+    localStorage.setItem('confirmationPage', JSON.stringify(roomConfirm))
 
     const settings = {
         async: true,
         crossDomain: true,
-        url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
+        url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + '&currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302',
@@ -94,11 +106,12 @@ async function findHotels(checkIn, checkOut) {
         $("#hotelColumn").removeClass("is-hidden");
 
     });
-        // console.log()
-        // console.log()
+
 
     
 }
+
+
 
 // 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=186338&checkIn=%3CREQUIRED%3E&checkOut=2023-07-19&pageNumber=1&adults=2&rooms=2&currencyCode=USD&rating=2&priceMin=100&priceMax=200'
 
@@ -106,27 +119,26 @@ async function findHotels(checkIn, checkOut) {
 // url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
 var unsplashApiKey = 'v_ZHZM7ccQIgp2uVQNcA09a5epEcctWEX4kxYQ3TwM8';
 var unsplashApiKey1 = '5lH3PxzCuhd_HBTDBZYhWGJbPjXw2Qido0wXCLMS2Vs';
-// Number of random images to fetch
-// var numImages = 5;
 
-// Container element to append the images
+var numImages = 4;
+
 var imageIds = ['image1', 'image2', 'image3','image4'];
 
-// Fetch random images from Unsplash API
+
 function fetchAndSetImageSource(imageId) {
-    // Fetch a random image from Unsplash API
-    fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey)
+    
+    fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey1)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        // Get the image element by ID
+    
         var image = document.getElementById(imageId);
   
-        // Set the source URL of the image
+        
         image.src = data.urls.regular;
   
-        // Set other attributes or styles as desired
+       
         image.alt = data.alt_description;
       })
       .catch(function(error) {
@@ -134,7 +146,20 @@ function fetchAndSetImageSource(imageId) {
       });
   }
   
-  // Loop through the image IDs and fetch/set image source URLs
+ 
   imageIds.forEach(function(imageId) {
     fetchAndSetImageSource(imageId);
   });
+
+  $('.reserve-btn').click(function(){
+    console.log($(this));
+    var imageHotel = $(this).siblings('img').attr('src');
+    var hotelName = $(this).siblings('h3').text();
+    console.log(hotelName);
+    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'));
+    hotelParams.hotelName = hotelName;
+    hotelParams.imageSource = imageHotel;
+    localStorage.setItem('confirmationPage', JSON.stringify(hotelParams));
+    window.location.href = "./confirm.html"
+});
+

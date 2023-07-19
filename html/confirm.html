@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/confirm.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
@@ -13,7 +13,7 @@
     <header>
         <section class="hero has-background-grey-light">
             <div class="hero-body ">
-              <p class="title has-text-grey">
+              <p class="title has-text-white">
                 Vacation Destination
               </p>
               <!-- <p class="subtitle">
@@ -23,20 +23,39 @@
           </section>
     </header>
     <main>
-        <div class="block"></div>
-        <div class="block"></div>
-        <div id="mainContainer" class="tile is-ancestor is-vertical is-12 ">
-            <div id="confirmTile" class="tile is-parent box content has-background-grey-light is-6 is-align-self-center ">
-                <div class="tile is-child">
-                    <h2>Congratulations!</h2>
-                    <p id="confirmInfo"></p>
+        <div class="reservation-confirmation">
+            <div class="hotelInfo">
+                <div><h2 id="hotelName"></h2></div>
+                <div><img id="hotelImage" src="./images/hotel-stock1.jpg"></div>
+                
+                <ul>
+                    <li id="checkIn">Check-In: </li>
+                    <li id="checkOut">Checkout: </li>
+                    <li id="adults">Number of Guests: </li>
+                    <li id="roomsNum">Number of Rooms: </li>
+                </ul>
+            </div>
+        
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" placeholder="Your Name" type="text" id="nameInput" required>
                 </div>
             </div>
+          
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="youremail@mail.com" id="emailInput" required>
+                </div>
+            </div>
+            <button class="button is-success" onclick="submitForm()">Confirm</button>
+            <p id="confirmationMessage" class="hidden"><i class="fas fa-check-circle"></i> Thank you for planning your trip with us! We will contact you shortly.</p>
         </div>
     </main>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/fa269acc0b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="../assets/java/confirm.js"></script>
 </body>
