@@ -1,172 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City and Hotel Information</title>
-    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="../assets/css/jquery-ui.css">
-    <link href = "../assets/css/cityStay.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City and Hotel Information</title>
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery-ui.css">
+  <link href="../assets/css/cityStay.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 </head>
 
 <body>
-    <header>
-        <section class="hero has-background-grey-dark ">
-            <div class="hero-body ">
-              <p class="title has-text-white">
-                Vacation Destination
-              </p>
-              <!-- <p class="subtitle">
-                
-              </p> -->
-            </div>
-          </section>
-    </header>
+  <header>
+    <section class="hero has-background-grey-light ">
+      <div class="hero-body ">
+        <p class="title has-text-grey-dark">
+          Vacation Destination
+        </p>
 
+      </div>
+    </section>
+  </header>
+  <div class="back">
     <div class="block"></div>
 
     <main>
-        <section>
+
+
+      <section>
         <div id="fillOutContatiner" class="tile is-ancestor is-vertical is-12">
 
-                <div id="checkInOutArea" class="tile is-parent box content has-background-grey-light is-4 is-align-self-center">
-                    <div class="tile is-child">
-                        <label>Check In</label>
-                        <input id="checkInDate"type="text" name="from" class="input is-danger">
-                    </div>
-                    <div class="tile is-child">
-                        <label >Check Out</label>
-                        <input id="checkOutDate" type="text" name="to" class="input is-danger">
-                    </div>
-                </div>
-                <div id="extraOptions" class="tile is-parent box content has-background-grey-light is-7 is-align-self-center">
-                    <div class="tile is-child">
-                        <label>Number of Rooms</label>
-                        <input id="roomNum" type="text" name="to" class="input is-danger">
-                    </div>
-                    <div class="tile is-child">
-                        <label>Number of Adults</label>
-                        <input id="adultsNum" type="text" name="to" class="input is-danger">
-                    </div>
-                    <div class="tile is-child">
-                        <label>Minimum Price</label>
-                        <input id="minPrice" type="text" name="to" class="input is-danger">
-                    </div>
-                    <div class="tile is-child">
-                        <label for="to">Maximum Price</label>
-                        <input id="maxPrice" type="text" name="to" class="input is-danger">
-                    </div>
-                    <div class="tile is-child">
-                        <label>Rating</label>
-                        <input id="rating" type="text" name="to" class="input is-danger">
-                    </div>
-
-
-                
-                </div>
-                <div class="tile is-align-self-center">
-                    <button id="searchBtn" class="button is-danger is-light is-medium">Search</button>
-                </div>
-        </div>
-        </section>
-
-        
-        <div id="mainContainer" class="is-hidden">
-            <div id="columns" class="tile is-ancestor is-12">
-
-                <div id="weatherColumn" class="tile is-vertical is-4">
-
-                <div id="weatherColumn" class="tile is-vertical is-4">
-
-                <div class="tile is-vertical is-4">
-
-                    <div class="tile is-parent">
-                        <div id="mainCityInfo" class="tile is-child box content has-background-grey">
-                            <h2 id="cityName">hi</h2>
-                            <p id="mainTemp">hi</p>
-                            <p id="mainHumid">hi</p>
-                            <p id="mainWind">hi</p>
-                        </div>
-                    </div>
-                        <div class="tile is-parent">
-                            <div id="foreInfo1" class="tile is-child box content has-background-grey-dark">
-                                <h4 id="foreDate1">hi</h4>
-                                <p id="foreTemp1">hi</p>
-                                <p id="foreHumid1"></p>
-                                <p id="foreWind1"></p>
-                            </div>
-                            <div id="foreInfo2" class="tile is-child is-offset-1 box content has-background-grey-dark">
-                                <h4 id="foreDate2">hi</h4>
-                                <p id="foreTemp2">hi</p>
-                                <p id="foreHumid2"></p>
-                                <p id="foreWind2"></p>
-                            </div>
-                        </div>
-                    
-                </div>
+          <div id="checkInOutArea"
+            class="tile is-parent box content has-background-grey-light is-4 is-align-self-center">
+            <div class="tile is-child">
+              <label>Check In</label>
+              <input id="checkInDate" type="text" name="from" class="input is-info">
             </div>
-            
-        </div>
-     </div>  
-</div>
-                <div id="hotelColumn" class=" is-hidden is-centered container">
-                    <div class="columns is-variable is-8">
-                      <div class="column">
-                        <div class="box content has-background-grey">
-                            <img id="image1">
-                          <h3 id="hotelName1">Featured Hotel: </h3>
-                          <p id="hotelInfo1"></p>
-                          <p id="hotelPrice1">Hotel Price:</p>
-                          <button class="button is-info">Reserve Now</button>
-                        </div>
-                      </div>
-                      <div class="column">
-                        <div  class="box content has-background-grey">
-                            <img id="image2">
-                          <h3 id="hotelName2">Hotel: </h3>
-                          <p id="hotelInfo2"></p>
-                          <p id="hotelPrice2">Hotel Price:</p>
-                          <button class="button is-info">Reserve Now</button>
-                        </div>
-                      </div>
-                      <div class="column">
-                        <div  class="box content has-background-grey">
-                            <img id="image3">
-                          <h3 id="hotelName3">Hotel: </h3>
-                          <p id="hotelInfo3"></p>
-                          <p id="hotelPrice3">Hotel Price:</p>
-                          <button class="button is-info">Reserve Now</button>
-                        </div>
-                      </div>
-                      <div class="column">
-                        <div  class="box content has-background-grey">
-                            <img id="image4">
-                          <h3 id="hotelName4">Hotel: </h3>
-                          <p id="hotelInfo4"></p>
-                          <p id="hotelPrice4">Hotel Price:</p>
-                          <button class="button is-info">Reserve Now</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
+            <div class="tile is-child">
+              <label>Check Out</label>
+              <input id="checkOutDate" type="text" name="to" class="input is-info">
+            </div>
+          </div>
+          <div id="extraOptions" class="tile is-parent box content has-background-grey-light is-7 is-align-self-center">
+            <div class="tile is-child">
+              <label>Number of Rooms</label>
+              <input id="roomNum" type="text" name="to" class="input is-info">
+            </div>
+            <div class="tile is-child">
+              <label>Number of Adults</label>
+              <input id="adultsNum" type="text" name="to" class="input is-info">
+            </div>
+            <div class="tile is-child">
+              <label>Minimum Price</label>
+              <input id="minPrice" type="text" name="to" class="input is-info">
+            </div>
+            <div class="tile is-child">
+              <label for="to">Maximum Price</label>
+              <input id="maxPrice" type="text" name="to" class="input is-info">
+            </div>
+            <div class="tile is-child">
+              <label>Rating</label>
+              <input id="rating" type="text" name="to" class="input is-info">
+            </div>
 
-                
-            
+
+
+          </div>
+          <div class="tile is-align-self-center">
+            <button id="searchBtn" class="button is-info is-light is-medium">Search</button>
+          </div>
+        </div>
+      </section>
+
+<!-- 
+      <div id="mainContainer" class="is-hidden">
+        <div id="columns" class="tile is-ancestor is-12">
+
+          <div id="weatherColumn" class="tile is-vertical is-4">
+
+            <div id="weatherColumn" class="tile is-vertical is-4">
+
+              <div class="tile is-vertical is-4">
+
+                <div class="tile is-parent">
+                  <div id="mainCityInfo" class="tile is-child box content has-background-grey">
+                    <h2 id="cityName">hi</h2>
+                    <p id="mainTemp">hi</p>
+                    <p id="mainHumid">hi</p>
+                    <p id="mainWind">hi</p>
+                  </div>
+                </div>
+                <div class="tile is-parent">
+                  <div id="foreInfo1" class="tile is-child box content has-background-grey-dark">
+                    <h4 id="foreDate1">hi</h4>
+                    <p id="foreTemp1">hi</p>
+                    <p id="foreHumid1"></p>
+                    <p id="foreWind1"></p>
+                  </div>
+                  <div id="foreInfo2" class="tile is-child is-offset-1 box content has-background-grey-dark">
+                    <h4 id="foreDate2">hi</h4>
+                    <p id="foreTemp2">hi</p>
+                    <p id="foreHumid2"></p>
+                    <p id="foreWind2"></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div> -->
+      <div id="hotelColumn" class=" is-hidden is-centered container">
+        <div class="columns is-variable is-8">
+          <div class="column">
+            <div class="box content has-background-grey">
+              <img id="image1">
+              <h3 id="hotelName1">Featured Hotel: </h3>
+              <p id="hotelInfo1"></p>
+              <p id="hotelPrice1">Hotel Price:</p>
+              <button class="button is-info">Reserve Now</button>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box content has-background-grey">
+              <img id="image2">
+              <h3 id="hotelName2">Hotel: </h3>
+              <p id="hotelInfo2"></p>
+              <p id="hotelPrice2">Hotel Price:</p>
+              <button class="button is-info">Reserve Now</button>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box content has-background-grey">
+              <img id="image3">
+              <h3 id="hotelName3">Hotel: </h3>
+              <p id="hotelInfo3"></p>
+              <p id="hotelPrice3">Hotel Price:</p>
+              <button class="button is-info">Reserve Now</button>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box content has-background-grey">
+              <img id="image4">
+              <h3 id="hotelName4">Hotel: </h3>
+              <p id="hotelInfo4"></p>
+              <p id="hotelPrice4">Hotel Price:</p>
+              <button class="button is-info">Reserve Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
 
 
 
     </main>
 
+  </div>
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script src="../assets/java/jquery-ui.js"></script>
-    <script src="../assets/java/cityStay.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+  <script src="../assets/java/jquery-ui.js"></script>
+  <script src="../assets/java/cityStay.js"></script>
 </body>
 
 </html>

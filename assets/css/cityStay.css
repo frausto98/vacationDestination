@@ -5,3 +5,6 @@
 #weatherColumn {
 display: none;
 }
+.back{
+    background: linear-gradient( rgb(80, 131, 179), #ffffff);
+}
