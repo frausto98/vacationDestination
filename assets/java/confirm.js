@@ -9,7 +9,7 @@ $(window).on("load", function() {
     var hotelName = confirmationData.hotelName;
     var numAdults = confirmationData.numAdults;
     var rooms = confirmationData.rooms;
-    
+    var imageSource = confirmationData.imageSource;
   
     
     var hotelNameWithoutNumber = hotelName.replace(/(Featured Hotel:|\d+\.\s*)/g, "");
@@ -18,6 +18,7 @@ $(window).on("load", function() {
     $("#checkOut").text("Checkout: " + formattedCheckOut);
     $("#adults").text("Number of Guests: " + numAdults);
     $("#roomsNum").text("Number of Rooms: " + rooms);
+    $("#hotelImage").attr("src", imageSource);
   });
   
 
