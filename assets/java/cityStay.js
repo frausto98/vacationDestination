@@ -12,7 +12,7 @@ var priceMax = $('#maxPrice');
 var rating = $('#rating');
 
 
-// var reserveBtn = $('.reserve-btn');
+var reserveBtn = $('.reserve-btn');
 
 var apiKey = '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0'
 var apiKey1 = '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302'
@@ -156,10 +156,10 @@ function fetchAndSetImageSource(imageId) {
     var imageHotel = $(this).siblings('img').attr('src');
     var hotelName = $(this).siblings('h3').text();
     console.log(hotelName);
-    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'));
+    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'))
     hotelParams.hotelName = hotelName;
     hotelParams.imageSource = imageHotel;
     localStorage.setItem('confirmationPage', JSON.stringify(hotelParams));
-    window.location.href = "./confirm.html"
+    window.location.href = "accept.html"
 });
 
