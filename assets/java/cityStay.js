@@ -153,11 +153,10 @@ function fetchAndSetImageSource(imageId) {
     var imageHotel = $(this).siblings('img').attr('src');
     var hotelName = $(this).siblings('h3').text();
     console.log(hotelName);
-    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'))
-    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'))
+    var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'));
     hotelParams.hotelName = hotelName;
     hotelParams.imageSource = imageHotel;
     localStorage.setItem('confirmationPage', JSON.stringify(hotelParams));
-    window.location.href = ".confirm.html"
+    window.location.href = "./confirm.html"
 });
 
