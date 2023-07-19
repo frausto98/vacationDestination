@@ -90,3 +90,8 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
+body {
+
+    background: linear-gradient(#0461ec, #000000);
+}
+  
