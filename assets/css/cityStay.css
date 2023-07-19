@@ -9,3 +9,7 @@ display: none;
     background: linear-gradient( rgb(80, 131, 179), #ffffff);
 }
 
+#hotelColumn img{
+    width: 200px;
+    height: 140px;
+}
