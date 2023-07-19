@@ -2,7 +2,7 @@ console.log(localStorage);
 var storedData = localStorage.getItem('data');
 var dataArray = JSON.parse(storedData);
 var storedCity = localStorage.getItem('city');
-var geoId = localStorage.getItem('gedId');
+var geoId = localStorage.getItem('geoId');
 var searchButton = $('#searchBtn');
 var numRoom = $('#roomNum');
 var numAdults = $('#adultsNum');
@@ -119,38 +119,37 @@ async function findHotels(checkIn, checkOut) {
 // url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + 'currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
 var unsplashApiKey = 'v_ZHZM7ccQIgp2uVQNcA09a5epEcctWEX4kxYQ3TwM8';
 var unsplashApiKey1 = '5lH3PxzCuhd_HBTDBZYhWGJbPjXw2Qido0wXCLMS2Vs';
-// Number of random images to fetch
-// var numImages = 5;
 
-// Container element to append the images
-// var imageIds = ['image1', 'image2', 'image3','image4'];
+var numImages = 4;
 
-// // Fetch random images from Unsplash API
-// function fetchAndSetImageSource(imageId) {
-//     // Fetch a random image from Unsplash API
-//     fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey1)
-//       .then(function(response) {
-//         return response.json();
-//       })
-//       .then(function(data) {
-//         // Get the image element by ID
-//         var image = document.getElementById(imageId);
+var imageIds = ['image1', 'image2', 'image3','image4'];
+
+
+function fetchAndSetImageSource(imageId) {
+    
+    fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey1)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+    
+        var image = document.getElementById(imageId);
   
-//         // Set the source URL of the image
-//         image.src = data.urls.regular;
+        
+        image.src = data.urls.regular;
   
-//         // Set other attributes or styles as desired
-//         image.alt = data.alt_description;
-//       })
-//       .catch(function(error) {
-//         console.log('Error:', error);
-//       });
-//   }
+       
+        image.alt = data.alt_description;
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+      });
+  }
   
-//   // Loop through the image IDs and fetch/set image source URLs
-//   imageIds.forEach(function(imageId) {
-//     fetchAndSetImageSource(imageId);
-//   });
+ 
+  imageIds.forEach(function(imageId) {
+    fetchAndSetImageSource(imageId);
+  });
 
   $('.reserve-btn').click(function(){
     console.log($(this))
@@ -159,5 +158,6 @@ var unsplashApiKey1 = '5lH3PxzCuhd_HBTDBZYhWGJbPjXw2Qido0wXCLMS2Vs';
     var hotelParams = JSON.parse(localStorage.getItem('confirmationPage'))
     hotelParams.hotelName = hotelName
     localStorage.setItem('confirmationPage', JSON.stringify(hotelParams))
-    location.href='./confirm.html';
+    window.location.href = "./confirm.html"
 });
+

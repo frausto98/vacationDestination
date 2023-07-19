@@ -4,13 +4,17 @@ html, body {
     /* overflow: hidden; */
     scroll-behavior: smooth;
   }
+#home {
+    background-color: rgb(55, 154, 247);
+}
+
 
 .search-bar {
     flex-wrap: wrap;
     width: 100%;
     min-height: 50px;
     padding: 20px;
-    background-color: rgb(177, 177, 177);
+    /* background-color: rgb(177, 177, 177); */
     /* padding-left: 1500px; */
 }
 
@@ -18,7 +22,7 @@ html, body {
     flex: 1;
     padding: 10px;
     border: none;
-    background-color: rgb(152, 177, 201);
+    background-color: rgb(14, 136, 251);
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     box-shadow: 0 4px 8px rgba(12, 12, 12, 0.5);
@@ -27,7 +31,7 @@ html, body {
     width: 500px;
   }
 .navlinks {
-    background-color: rgb(119, 118, 118);
+    /* background-color: rgb(119, 118, 118); */
     flex-wrap: wrap;
     padding-left: 15px;
     font-weight: bold;
@@ -54,14 +58,12 @@ html, body {
 }
 
 
-.content-flex-space {
-    background-color: rgb(168, 168, 168);
-}
+
 
 .navlinks {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(152, 177, 201);
+    /* background-color: rgb(152, 177, 201); */
     padding: 10px;
 }
 
@@ -101,7 +103,7 @@ html, body {
 button {
     padding: 10px 20px;
     border: none;
-    background-color: rgb(139, 139, 139);
+    background-color: rgb(167, 166, 166);
     color: rgb(0, 0, 0);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -160,4 +162,17 @@ body {
 
     background: linear-gradient( rgb(80, 131, 179), #ffffff);
 }
-  
+
+#menulist li a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+
+
+#menulist li a:hover {
+    color: white;
+}
+
