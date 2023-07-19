@@ -1,4 +1,5 @@
 # vacationDestination
+(cityStay.html must be all lowercased in the url!!)
 
 ## Description:
 We have built a hotel finder so that you can plan your next Vacation Destination. The application is a search engine where you can look up a location and find places to stay within that area. You can input very specific information such as: Check-in and -out dates, how many are staying, how many rooms, and the price. You can then choose between four hotel options, click the reserve button on one of them, and then you'll be directed to a brief summary page where you can leave your name and email.
