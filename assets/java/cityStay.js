@@ -157,6 +157,6 @@ function fetchAndSetImageSource(imageId) {
     hotelParams.hotelName = hotelName;
     hotelParams.imageSource = imageHotel;
     localStorage.setItem('confirmationPage', JSON.stringify(hotelParams));
-    window.location.href = "./confirm.html"
+    window.location.href = "accept.html"
 });
 
