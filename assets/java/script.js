@@ -37,7 +37,7 @@ async function findCity(city) {
         var geoId = geoString.split(';')[1]
         console.log(response);
         console.log(geoId);
-        window.location.href = "./citystay.html";
+        window.location.href = "./cityStay.html";
         localStorage.setItem('geoId', geoId);
         localStorage.setItem('city', city);
         console.log(response);
