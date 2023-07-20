@@ -47,6 +47,7 @@ async function findCity(city) {
 
 // animejs
 
+
 window.onload = function() {
     var duration = 2000;
     var delta = 1000;
