@@ -4,7 +4,7 @@ var citySearch = $('.searchCity');
 var checkIn;
 var checkOut;
 var apiKey = '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0';
-var apiKey1 = '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302';
+var apiKey1 = 'bffcc9a048mshe59ea5b3089de14p1f41b1jsn84b09936a31a';
 
 searchButton.on('click', function(event){
     event.preventDefault();
@@ -25,7 +25,7 @@ async function findCity(city) {
         url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation?query=' + city,
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '25108deademsh71d8a17d3aa10b1p1e1407jsnaf1da3a92302',
+            'X-RapidAPI-Key': 'bffcc9a048mshe59ea5b3089de14p1f41b1jsn84b09936a31a',
             'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
         }
     };
