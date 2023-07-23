@@ -3,9 +3,9 @@
 $(window).on("load", function() {
     var confirmationData = JSON.parse(localStorage.getItem("confirmationPage"));
   
-    // Retrieve the values from the confirmationData object
+    
     var formattedCheckIn = dayjs(confirmationData.formattedCheckIn).format("MMMM D, YYYY");
-  var formattedCheckOut = dayjs(confirmationData.formattedCheckOut).format("MMMM D, YYYY");
+    var formattedCheckOut = dayjs(confirmationData.formattedCheckOut).format("MMMM D, YYYY");
     var hotelName = confirmationData.hotelName;
     var numAdults = confirmationData.numAdults;
     var rooms = confirmationData.rooms;
