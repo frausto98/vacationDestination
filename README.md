@@ -78,11 +78,11 @@ The format and styling of this project involved the implementation of Bulma io, 
           </div>
 ```
 
-Rather than utilizing css to hide certain classes and control their size, bulma makes it easier to control these elements by simply typing out the direction, size, and class modifier within the class itself in HTML.
+Rather than utilizing CSS to hide certain classes and control their size, bulma makes it easier to control these elements by simply typing out the direction, size, and class modifier within the class itself in HTML.
 
 ### Tripadvisor
 
-The Tripadvisor API we used allowed us to access hotels given the city, check-in and check-out dates, price, and rating. The most challengin part of this API was being able to efficiently utilize the different endpoints and translate them into an easy GUI for the user to easily input these values.
+The Tripadvisor API we used allowed us to access hotels given the city, check-in and check-out dates, price, and rating. The most challenging part of this API was being able to efficiently utilize the different endpoints and translate them into an easy GUI for the user to easily input these values.
 
 ```js
 searchButton.on('click', function(event){
