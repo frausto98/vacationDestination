@@ -13,3 +13,8 @@ display: none;
     width: 200px;
     height: 140px;
 }
+
+img {
+max-width: 250px;
+max-height: 200px;
+}

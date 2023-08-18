@@ -14,7 +14,7 @@ var rating = $('#rating');
 
 //var reserveBtn = $('.reserve-btn');
 
-var apiKey = '2d700b2435msh0a7cd8e74fc4857p188924jsn21fe9f3932f0'
+var apiKey = '0e93ddd3c2msh23a60b4a39cae32p15859djsn1e7a4d10d15c'
 var apiKey1 = '2bffcc9a048mshe59ea5b3089de14p1f41b1jsn84b09936a31a'
 var formattedCheckIn;
 var formattedCheckOut;
@@ -70,7 +70,7 @@ async function findHotels(checkIn, checkOut) {
         url: 'https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels?geoId=' + geoId + '&checkIn=' + formattedCheckIn + '&checkOut=' + formattedCheckOut + '&pageNumber=1' + numAdultsUrl + numRoomUrl + '&currencyCode=USD' + ratingUrl + priceMinUrl + priceMaxUrl,
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'bffcc9a048mshe59ea5b3089de14p1f41b1jsn84b09936a31a',
+            'X-RapidAPI-Key': apiKey,
             'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
         }
     };
@@ -119,29 +119,32 @@ var unsplashApiKey1 = '5lH3PxzCuhd_HBTDBZYhWGJbPjXw2Qido0wXCLMS2Vs';
 
 var numImages = 4;
 
-var imageIds = ['image1', 'image2', 'image3','image4'];
-
+var imageIds = ['image1', 'image2', 'image3', 'image4'];
 
 function fetchAndSetImageSource(imageId) {
-    
-    fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey1)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-    
-        var image = document.getElementById(imageId);
+  var width = 250;
+  var height = 250;
   
-        
-        image.src = data.urls.regular;
+  fetch('https://api.unsplash.com/photos/random?query=hotel&client_id=' + unsplashApiKey + '&w=' + width + '&h=' + height)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      var image = document.getElementById(imageId);
   
-       
-        image.alt = data.alt_description;
-      })
-      .catch(function(error) {
-        console.log('Error:', error);
-      });
-  }
+      image.src = data.urls.regular;
+      image.alt = data.alt_description;
+    })
+    .catch(function(error) {
+      console.log('Error:', error);
+    });
+}
+
+// Call fetchAndSetImageSource for each image
+imageIds.forEach(function(imageId) {
+  fetchAndSetImageSource(imageId);
+});
+
   
  
   imageIds.forEach(function(imageId) {
